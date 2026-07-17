@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="lockScreen" class="lock">
+
+<h2>Inventory Locked</h2>
+
+<input id="pinInput" type="password" placeholder="Enter PIN">
+
+<button onclick="unlockApp()">Unlock</button>
+
+<p id="error"></p>
+
+</div>
+
+<h1>Inventory Management</h1>
+
+<div class="box">
+
+<h2>Add Item</h2>
+
+<input id="code" placeholder="Item Code">
+<input id="name" placeholder="Item Name">
+<input id="qty" type="number" placeholder="Opening Stock">
+
+<button id="saveBtn" onclick="addItem()" disabled>
+Save Item
+</button>
+
+</div>
+
+
+<div class="box">
+
+<h2>Stock Entry</h2>
+
+<select id="itemSelect">
+<option>Select Item</option>
+</select>
+
+<select id="type">
+
+<option value="RESTOCK">
+Restock (IN)
+</option>
+
+<option value="ISSUE">
+Issue (OUT)
+</option>
+
+</select>
+
+
+<input id="transQty" type="number" placeholder="Quantity">
+
+<button id="transBtn" onclick="saveTransaction()" disabled>
+Save Transaction
+</button>
+Save Transaction
+</button>
+
+</div>
+
+
+<div class="box">
+
+<h2>Current Stock</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Code</th>
+<th>Item</th>
+<th>Quantity</th>
+</tr>
+</thead>
+
+<tbody id="stockList"></tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="box">
+
+<h2>Transaction History</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Date</th>
+<th>Item</th>
+<th>Type</th>
+<th>Qty</th>
+</tr>
+</thead>
+
+<tbody id="transactionList"></tbody>
+
+</table>
+
+</div>
+
+
+<script src="app.js"></script>
+
+<div id="appContent" style="display:none">
+
+<!-- Existing inventory code goes here -->
+
+</div>
+
+</body>
+</html>
