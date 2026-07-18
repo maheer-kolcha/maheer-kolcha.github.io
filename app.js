@@ -56,9 +56,6 @@ loadTransactions();
 
 
 
-
-// Add Item
-
 function addItem(){
 
 if(!db){
@@ -67,28 +64,71 @@ if(!db){
 }
 
 
-let tx=db.transaction(
-"items",
-"readwrite"
+let item = {
+
+    code: document.getElementById("code").value,
+
+    name: document.getElementById("name").value,
+
+    qty: Number(document.getElementById("qty").value)
+
+};
+
+
+let tx = db.transaction(
+    ["items","transactions"],
+    "readwrite"
 );
 
 
+let addRequest =
 tx.objectStore("items").add(item);
+
+
+
+addRequest.onsuccess=function(e){
+
+
+    let itemId=e.target.result;
+
+
+    // Add opening stock transaction
+
+    if(item.qty > 0){
+
+        tx.objectStore("transactions").add({
+
+            itemId:itemId,
+
+            itemName:item.name,
+
+            type:"Opening Stock",
+
+            qty:item.qty,
+
+            date:new Date().toLocaleDateString()
+
+        });
+
+    }
+
+
+};
 
 
 
 tx.oncomplete=function(){
 
-loadStock();
-loadItemDropdown();
+    loadStock();
+
+    loadItemDropdown();
+
+    loadTransactions();
 
 };
 
 
 }
-
-
-
 
 
 
