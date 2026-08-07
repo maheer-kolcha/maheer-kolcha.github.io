@@ -21,9 +21,8 @@ content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/sidebar.css">
 <link rel="stylesheet" href="css/statusbar.css">
 
-<!-- Xterm.js Styles and Script Libraries -->
-<link rel="stylesheet" href="https://jsdelivr.net" />
-<script src="https://jsdelivr.net"></script>
+<link rel="stylesheet" href="css/jquery.terminal.min.css" />
+<script src="jquery.terminal.js"></script>
 
 <style>
   /* The floating, draggable window container */
@@ -86,21 +85,6 @@ content="width=device-width, initial-scale=1.0">
 
 
 <body>
-
-<!-- Floating Window Markup Structure -->
-<div id="movable-terminal-window">
-  <div id="terminal-header-handle">
-    <span>Terminal Session</span>
-    <div class="window-buttons">
-      <span class="dot dot-min"></span>
-      <span class="dot dot-max"></span>
-      <span class="dot dot-close" id="close-terminal-btn"></span>
-    </div>
-  </div>
-  <div id="terminal-body-container"></div>
-</div>
-<div id="app">
-
 
 
     <!-- Toolbar -->
@@ -296,6 +280,17 @@ content="width=device-width, initial-scale=1.0">
 <!-- Application -->
 <script type="module" src="js/main.js"></script>
 
+<div id="dev-terminal-window" style="display: none; position: fixed; top: 15%; left: 25%; width: 600px; height: 400px; background: #111; border: 1px solid #444; box-shadow: 0px 10px 30px rgba(0,0,0,0.5); z-index: 999999; font-family: monospace; border-radius: 6px; overflow: hidden; box-sizing: border-box;">
+    
+    <!-- Title Bar Handle for Dragging -->
+    <div class="term-header" style="background: #222; color: #bbb; padding: 8px 12px; cursor: move; user-select: none; border-bottom: 1px solid #333; font-size: 13px; display: flex; justify-content: space-between; align-items: center;">
+        <span>DevConsole:~</span>
+        <button class="term-close-btn" style="background: #ff5f56; border: none; width: 12px; height: 12px; border-radius: 50%; cursor: pointer;" title="Close"></button>
+    </div>
+    
+    <!-- Core Terminal Target Area -->
+    <div id="dev-terminal-body" style="height: calc(100% - 32px); width: 100%;"></div>
+</div>
 
 
 </body>
