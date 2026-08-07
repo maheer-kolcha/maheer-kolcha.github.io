@@ -21,13 +21,84 @@ content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/sidebar.css">
 <link rel="stylesheet" href="css/statusbar.css">
 
+<!-- Xterm.js Styles and Script Libraries -->
+<link rel="stylesheet" href="https://jsdelivr.net" />
+<script src="https://jsdelivr.net"></script>
 
+<style>
+  /* The floating, draggable window container */
+  #movable-terminal-window {
+    display: none; /* Hidden by default until shortcut is pressed */
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    width: 550px;
+    height: 380px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 6px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 99999; /* Keeps window above all other web content */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  /* The top handle bar used for dragging the window */
+  #terminal-header-handle {
+    padding: 8px 12px;
+    cursor: move; /* Changes cursor to dragging arrows */
+    background-color: #2d2d2d;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    user-select: none;
+  }
+
+  /* Decorative window buttons */
+  .window-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-close { background-color: #ff5f56; cursor: pointer; }
+  .dot-min { background-color: #ffbd2e; }
+  .dot-max { background-color: #27c93f; }
+
+  /* Inner area housing the actual xterm window */
+  #terminal-body-container {
+    width: 100%;
+    height: calc(100% - 35px); /* Subtracts header bar height */
+    background-color: #000;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+</style>
 </head>
 
 
 <body>
 
-
+<!-- Floating Window Markup Structure -->
+<div id="movable-terminal-window">
+  <div id="terminal-header-handle">
+    <span>Terminal Session</span>
+    <div class="window-buttons">
+      <span class="dot dot-min"></span>
+      <span class="dot dot-max"></span>
+      <span class="dot dot-close" id="close-terminal-btn"></span>
+    </div>
+  </div>
+  <div id="terminal-body-container"></div>
+</div>
 <div id="app">
 
 
