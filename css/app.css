@@ -1,0 +1,220 @@
+/* ===========================================================
+   Reset
+=========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:14px;
+
+    background:#f2f2f2;
+}
+
+/* ===========================================================
+   Application
+=========================================================== */
+
+#app{
+    display:flex;
+    flex-direction:column;
+
+    width:100%;
+    height:100%;
+}
+
+/* ===========================================================
+   Toolbar
+=========================================================== */
+
+#toolbar{
+
+    height:42px;
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #cccccc;
+
+    flex-shrink:0;
+}
+
+#toolbar button{
+
+    height:30px;
+
+    padding:0 12px;
+
+    cursor:pointer;
+}
+
+.separator{
+
+    width:1px;
+    height:24px;
+
+    background:#cccccc;
+
+    margin:0 4px;
+}
+
+/* ===========================================================
+   Workspace
+=========================================================== */
+
+#workspace{
+
+    flex:1;
+
+    display:flex;
+
+    overflow:hidden;
+}
+
+/* ===========================================================
+   Sidebar
+=========================================================== */
+
+#sidebar{
+
+    width:240px;
+
+    background:white;
+
+    border-right:1px solid #cccccc;
+
+    overflow:auto;
+}
+
+/* ===========================================================
+   Properties
+=========================================================== */
+
+#properties{
+
+    width:280px;
+
+    background:white;
+
+    border-left:1px solid #cccccc;
+
+    overflow:auto;
+}
+
+/* ===========================================================
+   Panels
+=========================================================== */
+
+.panel{
+
+    padding:12px;
+
+    border-bottom:1px solid #dddddd;
+}
+
+.panel h3{
+
+    margin-bottom:10px;
+
+    font-size:15px;
+}
+
+/* ===========================================================
+   Map
+=========================================================== */
+
+#mapContainer{
+
+    flex:1;
+
+    position:relative;
+}
+
+#map{
+
+    width:100%;
+    height:100%;
+}
+
+/* ===========================================================
+   Status Bar
+=========================================================== */
+
+#statusbar{
+
+    height:28px;
+
+    background:#ffffff;
+
+    border-top:1px solid #cccccc;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 10px;
+
+    flex-shrink:0;
+}
+
+/* ===========================================================
+   Lists
+=========================================================== */
+
+#layerList{
+
+    list-style:none;
+}
+
+#layerList li{
+
+    padding:6px;
+
+    border-radius:4px;
+
+    cursor:pointer;
+}
+
+#layerList li:hover{
+
+    background:#eeeeee;
+}
+
+/* ===========================================================
+   Responsive
+=========================================================== */
+
+@media (max-width:900px){
+
+    #sidebar{
+
+        width:180px;
+    }
+
+    #properties{
+
+        width:220px;
+    }
+
+}

@@ -1,0 +1,47 @@
+/******************************************************************************
+ Toolbar
+******************************************************************************/
+
+#toolbar {
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #cccccc;
+
+    flex-shrink:0;
+
+}
+
+
+#toolbar button {
+
+    height:30px;
+
+    padding:0 12px;
+
+    cursor:pointer;
+
+}
+
+
+.separator {
+
+    width:1px;
+
+    height:24px;
+
+    background:#cccccc;
+
+    margin:0 4px;
+
+}

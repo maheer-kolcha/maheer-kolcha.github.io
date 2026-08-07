@@ -1,0 +1,91 @@
+/******************************************************************************
+ Sidebar and Panels
+******************************************************************************/
+.layer-item {
+
+    padding:6px;
+
+    cursor:pointer;
+
+}
+
+
+.layer-item:hover {
+
+    background:#eeeeee;
+
+}
+
+
+.layer-item input {
+
+    margin-right:6px;
+
+}
+#sidebar {
+
+    width:240px;
+
+    background:white;
+
+    border-right:1px solid #cccccc;
+
+    overflow:auto;
+
+}
+
+
+#properties {
+
+    width:280px;
+
+    background:white;
+
+    border-left:1px solid #cccccc;
+
+    overflow:auto;
+
+}
+
+
+.panel {
+
+    padding:12px;
+
+    border-bottom:1px solid #dddddd;
+
+}
+
+
+.panel h3 {
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+
+#layerList {
+
+    list-style:none;
+
+}
+
+
+#layerList li {
+
+    padding:6px;
+
+    cursor:pointer;
+
+    border-radius:4px;
+
+}
+
+
+#layerList li:hover {
+
+    background:#eeeeee;
+
+}

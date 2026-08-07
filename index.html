@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>KML KMZ Viewer & Editor</title>
+
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="libs/leaflet.css">
+
+
+<!-- Application CSS -->
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/toolbar.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/statusbar.css">
+
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+
+    <!-- Toolbar -->
+
+    <div id="toolbar">
+
+
+        <button id="btnOpen">
+            Open
+        </button>
+
+
+        <button id="btnSave">
+            Save KML
+        </button>
+
+
+        <button id="btnSaveKMZ">
+            Save KMZ
+        </button>
+
+
+        <div class="separator"></div>
+
+
+        <button id="btnUndo">
+            Undo
+        </button>
+
+
+        <button id="btnRedo">
+            Redo
+        </button>
+
+
+
+        <input
+
+        id="fileInput"
+
+        type="file"
+
+        accept=".kml,.kmz"
+
+        hidden>
+
+
+    </div>
+
+
+
+
+
+    <!-- Main workspace -->
+
+    <div id="workspace">
+
+
+
+        <!-- Left sidebar -->
+
+        <aside id="sidebar">
+
+
+
+            <div class="panel">
+
+
+                <h3>
+                    Layers
+                </h3>
+
+
+                <div id="layerList">
+
+                    No layers
+
+                </div>
+
+
+            </div>
+
+
+
+        </aside>
+
+
+
+
+
+        <!-- Map -->
+
+        <main id="map">
+
+
+        </main>
+
+
+
+
+
+        <!-- Right properties -->
+
+        <aside id="properties">
+
+
+
+            <div class="panel">
+
+
+                <h3>
+                    Properties
+                </h3>
+
+
+                <div id="propertyPanel">
+
+                    No selection
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="panel">
+
+
+                <h3>
+                    Style
+                </h3>
+
+
+                <div id="stylePanel">
+
+
+                    No selection
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </aside>
+
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Status bar -->
+
+    <footer id="statusbar">
+
+
+        <span id="statusMessage">
+            Ready
+        </span>
+
+
+        <span id="coordinates">
+        </span>
+
+
+    </footer>
+
+
+
+</div>
+
+
+
+
+
+<!-- Leaflet -->
+
+<script src="libs/leaflet.js"></script>
+
+<!-- ZIP library for KMZ -->
+<script src="libs/fflate.min.js"></script>
+
+
+<!-- Application -->
+<script type="module" src="js/main.js"></script>
+
+
+
+</body>
+
+</html>

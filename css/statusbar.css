@@ -1,0 +1,23 @@
+/******************************************************************************
+ Status Bar
+******************************************************************************/
+
+#statusbar {
+
+    height:28px;
+
+    background:#ffffff;
+
+    border-top:1px solid #cccccc;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 10px;
+
+    flex-shrink:0;
+
+}
